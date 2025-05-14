@@ -22,7 +22,7 @@ const Navbar = () => {
               animate={{ opacity: 1, x: 0 }}
               className="flex-shrink-0"
             >
-              <span className="text-2xl font-display font-bold text-primary-600">DasMaxx AI</span>
+              <span className="text-2xl font-display font-bold text-primary-600">DasMaxx AI Studio</span>
             </motion.div>
           </div>
 
