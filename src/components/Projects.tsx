@@ -5,12 +5,11 @@ import {
   FaRobot, 
   FaPalette, 
   FaMobileAlt, 
-  FaShoppingCart, 
-  FaChartLine 
+  FaShoppingCart
 } from 'react-icons/fa';
 
 const Projects = () => {
-  const [activeCategory, setActiveCategory] = useState('all');
+  const [activeCategory] = useState('all');
 
   const categories = [
     { name: 'All', icon: <FaGlobe className="w-5 h-5" /> },

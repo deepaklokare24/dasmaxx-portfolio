@@ -3,8 +3,6 @@ import { useState } from 'react';
 import { 
   FaCalendarAlt, 
   FaClock, 
-  FaUser, 
-  FaTag, 
   FaArrowRight,
   FaCode,
   FaRobot,
@@ -13,7 +11,7 @@ import {
 } from 'react-icons/fa';
 
 const Blog = () => {
-  const [activeCategory, setActiveCategory] = useState('all');
+  const [activeCategory] = useState('all');
 
   const categories = [
     { name: 'All', icon: <FaCode className="w-5 h-5" /> },
