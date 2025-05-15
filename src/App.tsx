@@ -1,8 +1,11 @@
+import { motion } from 'framer-motion';
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
 import Services from './components/Services'
 import Projects from './components/Projects'
+import WhyChooseUs from './components/WhyChooseUs'
+import CaseStudies from './components/CaseStudies'
 import Testimonials from './components/Testimonials'
 import Blog from './components/Blog'
 import FAQ from './components/FAQ'
@@ -19,6 +22,8 @@ function App() {
         <Hero />
         <About />
         <Services />
+        <WhyChooseUs />
+        <CaseStudies />
         <Projects />
         <Testimonials />
         <Blog />

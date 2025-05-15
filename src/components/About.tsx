@@ -1,115 +1,90 @@
 import { motion } from 'framer-motion';
+import { FaCode, FaRobot, FaUsers, FaChartLine } from 'react-icons/fa';
 
 const About = () => {
   const values = [
     {
-      title: 'Innovation',
-      description: 'Pushing boundaries with cutting-edge AI solutions',
-      icon: '🚀',
+      icon: <FaCode className="w-6 h-6" />,
+      title: 'Technical Excellence',
+      description: 'We leverage cutting-edge technologies and best practices to deliver robust, scalable solutions.',
     },
     {
-      title: 'Excellence',
-      description: 'Delivering premium quality in every project',
-      icon: '⭐',
+      icon: <FaRobot className="w-6 h-6" />,
+      title: 'AI-First Approach',
+      description: 'We integrate artificial intelligence to automate processes and enhance user experiences.',
     },
     {
-      title: 'Integrity',
-      description: 'Building trust through transparent practices',
-      icon: '🤝',
+      icon: <FaUsers className="w-6 h-6" />,
+      title: 'User-Centric Design',
+      description: 'Every solution is crafted with the end-user in mind, ensuring intuitive and engaging experiences.',
     },
     {
-      title: 'Growth',
-      description: 'Continuous learning and improvement',
-      icon: '📈',
+      icon: <FaChartLine className="w-6 h-6" />,
+      title: 'Business Impact',
+      description: 'We focus on delivering measurable results that drive growth and efficiency for your business.',
     },
   ];
 
   return (
-    <section id="about" className="py-20 bg-white dark:bg-dark-bg">
-      <div className="container">
+    <section id="about" className="py-20 bg-gray-50 dark:bg-dark-bg">
+      <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-16"
+          className="max-w-3xl mx-auto text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-secondary-900 dark:text-gray-100 mb-4">
-            About DasMaxx AI Studio
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-gray-100">
+            About DasMaxx
           </h2>
-          <p className="text-lg text-secondary-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Founded by a U.S. Army veteran and seasoned tech professional, we're passionate about
-            transforming businesses through innovative AI solutions.
+          <p className="text-lg text-gray-600 dark:text-gray-300">
+            We are a team of passionate technologists and creative problem-solvers dedicated to transforming businesses through innovative software solutions. Our mission is to help companies thrive in the digital age by delivering cutting-edge technology that drives growth and efficiency.
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="relative"
-          >
-            <div className="aspect-w-4 aspect-h-3 rounded-2xl overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1522071820081-009f0129c71c"
-                alt="Team collaboration"
-                className="object-cover w-full h-full"
-              />
-            </div>
-            <div className="absolute -bottom-6 -right-6 bg-primary-600 dark:bg-primary-500 text-white p-6 rounded-2xl shadow-xl">
-              <div className="text-4xl font-bold">5+</div>
-              <div className="text-sm">Years of Excellence</div>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="space-y-6"
-          >
-            <h3 className="text-2xl font-display font-bold text-secondary-900 dark:text-gray-100">
-              Our Mission
-            </h3>
-            <p className="text-secondary-600 dark:text-gray-300">
-              At DasMaxx AI Studio, we're dedicated to empowering businesses with cutting-edge
-              AI solutions that drive growth and innovation. Our team combines technical expertise
-              with creative thinking to deliver exceptional results.
-            </p>
-            <div className="grid grid-cols-2 gap-4">
-              <div className="bg-primary-50 dark:bg-dark-card p-4 rounded-lg">
-                <div className="text-primary-600 dark:text-primary-400 font-bold">100+</div>
-                <div className="text-sm text-secondary-600 dark:text-gray-300">Happy Clients</div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {values.map((value, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="bg-white dark:bg-dark-card rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow duration-300"
+            >
+              <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900/20 rounded-lg flex items-center justify-center mb-4 text-primary-600 dark:text-primary-400">
+                {value.icon}
               </div>
-              <div className="bg-primary-50 dark:bg-dark-card p-4 rounded-lg">
-                <div className="text-primary-600 dark:text-primary-400 font-bold">200+</div>
-                <div className="text-sm text-secondary-600 dark:text-gray-300">Projects Delivered</div>
-              </div>
-            </div>
-          </motion.div>
+              <h3 className="text-xl font-semibold mb-3 text-gray-900 dark:text-gray-100">
+                {value.title}
+              </h3>
+              <p className="text-gray-600 dark:text-gray-300">
+                {value.description}
+              </p>
+            </motion.div>
+          ))}
         </div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="grid md:grid-cols-4 gap-8"
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="mt-16 bg-gradient-to-r from-primary-600 to-primary-400 dark:from-primary-500 dark:to-primary-300 rounded-2xl p-8 md:p-12 text-center"
         >
-          {values.map((value, index) => (
-            <motion.div
-              key={index}
-              whileHover={{ y: -5 }}
-              className="bg-white dark:bg-dark-card p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
-            >
-              <div className="text-4xl mb-4">{value.icon}</div>
-              <h4 className="text-xl font-bold text-secondary-900 dark:text-gray-100 mb-2">{value.title}</h4>
-              <p className="text-secondary-600 dark:text-gray-300">{value.description}</p>
-            </motion.div>
-          ))}
+          <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">
+            Ready to Transform Your Business?
+          </h3>
+          <p className="text-white/90 mb-8 max-w-2xl mx-auto">
+            Let's discuss how our expertise can help you achieve your business goals through innovative technology solutions.
+          </p>
+          <a
+            href="#contact"
+            className="inline-block px-8 py-4 bg-white text-primary-600 rounded-lg font-semibold hover:bg-gray-50 transition-colors duration-300"
+          >
+            Schedule a Consultation
+          </a>
         </motion.div>
       </div>
     </section>

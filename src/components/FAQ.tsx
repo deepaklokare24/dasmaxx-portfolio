@@ -1,43 +1,67 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState } from 'react';
+import { 
+  FaChevronDown, 
+  FaChevronUp, 
+  FaCode, 
+  FaRobot, 
+  FaMobileAlt, 
+  FaChartLine,
+  FaShieldAlt,
+  FaClock,
+  FaDollarSign,
+  FaUsers
+} from 'react-icons/fa';
 
 const FAQ = () => {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   const faqs = [
     {
-      question: 'What services does DasMaxx AI Studio offer?',
-      answer: 'We offer a comprehensive range of services including AI-generated art and portraits, video creation, website design and development, e-commerce solutions, and brand development. Our team combines cutting-edge AI technology with creative expertise to deliver exceptional results.',
+      question: 'What services does JDMaxx offer?',
+      answer: 'JDMaxx offers a comprehensive range of services including custom software development, AI & machine learning solutions, mobile app development, web development, cloud services, and digital transformation consulting. We specialize in creating innovative, scalable, and secure solutions for businesses of all sizes.',
+      icon: <FaCode className="w-6 h-6 text-primary-600 dark:text-primary-400" />
     },
     {
-      question: 'How long does it take to complete a project?',
-      answer: "Project timelines vary depending on the scope and complexity. A typical website project takes 2-4 weeks, while AI-generated content can be delivered within 1-2 weeks. We'll provide you with a detailed timeline during our initial consultation.",
+      question: 'How does JDMaxx approach AI implementation?',
+      answer: 'Our AI implementation process begins with a thorough analysis of your business needs and data infrastructure. We then design and develop custom AI solutions that integrate seamlessly with your existing systems. Our approach focuses on practical, business-value-driven AI applications that deliver measurable results.',
+      icon: <FaRobot className="w-6 h-6 text-primary-600 dark:text-primary-400" />
     },
     {
-      question: 'What is your pricing structure?',
-      answer: 'Our pricing is project-based and depends on your specific requirements. We offer competitive rates and can work with various budgets. Contact us for a free consultation and custom quote tailored to your needs.',
+      question: 'What is your mobile app development process?',
+      answer: 'Our mobile app development process follows a structured approach: 1) Requirements gathering and analysis, 2) UI/UX design, 3) Development and testing, 4) Deployment and maintenance. We ensure high-quality, scalable, and user-friendly mobile applications that work across all major platforms.',
+      icon: <FaMobileAlt className="w-6 h-6 text-primary-600 dark:text-primary-400" />
     },
     {
-      question: 'Do you offer ongoing support after project completion?',
-      answer: 'Yes, we provide comprehensive post-launch support including maintenance, updates, and technical assistance. We offer various support packages to ensure your digital assets continue to perform optimally.',
+      question: 'How do you ensure project success?',
+      answer: 'We ensure project success through our proven methodology: clear communication, regular progress updates, agile development practices, thorough testing, and continuous client collaboration. Our experienced team maintains high standards of quality and delivers projects on time and within budget.',
+      icon: <FaChartLine className="w-6 h-6 text-primary-600 dark:text-primary-400" />
     },
     {
-      question: 'How do you ensure the quality of AI-generated content?',
-      answer: 'Our AI-generated content goes through a rigorous quality control process. Our team of experts reviews and refines all AI outputs to ensure they meet our high standards and align with your brand guidelines.',
+      question: 'What security measures do you implement?',
+      answer: 'Security is our top priority. We implement industry-standard security measures including data encryption, secure coding practices, regular security audits, and compliance with international security standards. Our solutions are designed with security-first principles to protect your data and systems.',
+      icon: <FaShieldAlt className="w-6 h-6 text-primary-600 dark:text-primary-400" />
     },
     {
-      question: 'Can you help with existing projects or only new ones?',
-      answer: 'We can help with both new projects and improvements to existing ones. Whether you need a complete overhaul or specific enhancements, our team can assess your current setup and provide tailored solutions.',
+      question: 'What is your typical project timeline?',
+      answer: 'Project timelines vary based on complexity and scope. A typical project can range from 2-3 months for smaller applications to 6-12 months for complex enterprise solutions. We provide detailed project timelines during the initial consultation and maintain regular updates throughout development.',
+      icon: <FaClock className="w-6 h-6 text-primary-600 dark:text-primary-400" />
     },
+    {
+      question: 'How do you handle project pricing?',
+      answer: 'We offer flexible pricing models including fixed-price projects, time and materials, and dedicated team options. Pricing is determined based on project scope, complexity, and requirements. We provide detailed quotes and ensure transparency in all financial aspects of the project.',
+      icon: <FaDollarSign className="w-6 h-6 text-primary-600 dark:text-primary-400" />
+    },
+    {
+      question: 'Do you provide ongoing support?',
+      answer: 'Yes, we provide comprehensive ongoing support and maintenance services. This includes regular updates, bug fixes, performance optimization, and technical support. We offer various support packages to ensure your systems continue to run smoothly after deployment.',
+      icon: <FaUsers className="w-6 h-6 text-primary-600 dark:text-primary-400" />
+    }
   ];
 
-  const toggleFAQ = (index: number) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
-
   return (
-    <section id="faq" className="py-20 bg-gradient-to-b from-primary-50 dark:from-dark-card to-white dark:to-dark-bg">
-      <div className="container">
+    <section id="faq" className="py-20 bg-white dark:bg-dark-bg">
+      <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -45,15 +69,15 @@ const FAQ = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-secondary-900 dark:text-gray-100 mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 dark:text-gray-100">
             Frequently Asked Questions
           </h2>
-          <p className="text-lg text-secondary-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Find answers to common questions about our services and process
+          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            Find answers to common questions about our services and solutions
           </p>
         </motion.div>
 
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           {faqs.map((faq, index) => (
             <motion.div
               key={index}
@@ -64,38 +88,34 @@ const FAQ = () => {
               className="mb-4"
             >
               <button
-                onClick={() => toggleFAQ(index)}
-                className="w-full flex items-center justify-between p-6 bg-white dark:bg-dark-card rounded-xl shadow-lg hover:shadow-xl transition-shadow"
+                onClick={() => setActiveIndex(activeIndex === index ? null : index)}
+                className="w-full flex items-center justify-between p-6 bg-white dark:bg-dark-card rounded-xl shadow-sm hover:shadow-md transition-all duration-300"
               >
-                <span className="text-lg font-medium text-secondary-900 dark:text-gray-100 text-left">
-                  {faq.question}
-                </span>
-                <motion.svg
-                  className="w-6 h-6 text-primary-600 dark:text-primary-400"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  animate={{ rotate: openIndex === index ? 180 : 0 }}
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 9l-7 7-7-7"
-                  />
-                </motion.svg>
+                <div className="flex items-center gap-4">
+                  {faq.icon}
+                  <h3 className="text-lg font-semibold text-left text-gray-900 dark:text-gray-100">
+                    {faq.question}
+                  </h3>
+                </div>
+                {activeIndex === index ? (
+                  <FaChevronUp className="w-5 h-5 text-primary-600 dark:text-primary-400" />
+                ) : (
+                  <FaChevronDown className="w-5 h-5 text-primary-600 dark:text-primary-400" />
+                )}
               </button>
               <AnimatePresence>
-                {openIndex === index && (
+                {activeIndex === index && (
                   <motion.div
                     initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: 'auto', opacity: 1 }}
+                    animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
+                    transition={{ duration: 0.3, ease: "easeInOut" }}
                     className="overflow-hidden"
                   >
-                    <div className="p-6 bg-white dark:bg-dark-card mt-2 rounded-xl shadow-lg">
-                      <p className="text-secondary-600 dark:text-gray-300">{faq.answer}</p>
+                    <div className="p-6 bg-gray-50 dark:bg-dark-card/50 rounded-b-xl">
+                      <p className="text-gray-600 dark:text-gray-300">
+                        {faq.answer}
+                      </p>
                     </div>
                   </motion.div>
                 )}
@@ -109,18 +129,17 @@ const FAQ = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mt-12"
+          className="text-center mt-16"
         >
-          <p className="text-secondary-600 dark:text-gray-300 mb-4">
+          <p className="text-gray-600 dark:text-gray-300 mb-4">
             Still have questions? We're here to help!
           </p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="px-8 py-3 bg-primary-600 text-white rounded-md font-medium hover:bg-primary-700 dark:hover:bg-primary-500 transition-colors"
+          <a
+            href="#contact"
+            className="inline-block px-8 py-4 bg-primary-600 text-white rounded-lg font-semibold hover:bg-primary-700 transition-colors duration-300 dark:bg-primary-500 dark:hover:bg-primary-600"
           >
             Contact Us
-          </motion.button>
+          </a>
         </motion.div>
       </div>
     </section>
