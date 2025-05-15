@@ -55,7 +55,7 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-gradient-to-b from-white to-primary-50">
+    <section id="services" className="py-20 bg-gradient-to-b from-white dark:from-dark-bg to-primary-50 dark:to-dark-card">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -64,10 +64,10 @@ const Services = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-secondary-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-secondary-900 dark:text-gray-100 mb-4">
             Our Services
           </h2>
-          <p className="text-lg text-secondary-600 max-w-3xl mx-auto">
+          <p className="text-lg text-secondary-600 dark:text-gray-300 max-w-3xl mx-auto">
             Comprehensive digital solutions powered by cutting-edge AI technology
           </p>
         </motion.div>
@@ -81,7 +81,7 @@ const Services = () => {
             transition={{ duration: 0.5, delay: categoryIndex * 0.2 }}
             className="mb-16"
           >
-            <h3 className="text-2xl font-display font-bold text-secondary-900 mb-8">
+            <h3 className="text-2xl font-display font-bold text-secondary-900 dark:text-gray-100 mb-8">
               {category.category}
             </h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -89,13 +89,13 @@ const Services = () => {
                 <motion.div
                   key={index}
                   whileHover={{ y: -5 }}
-                  className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all"
+                  className="bg-white dark:bg-dark-card p-6 rounded-xl shadow-lg hover:shadow-xl transition-all"
                 >
                   <div className="text-4xl mb-4">{service.icon}</div>
-                  <h4 className="text-xl font-bold text-secondary-900 mb-2">
+                  <h4 className="text-xl font-bold text-secondary-900 dark:text-gray-100 mb-2">
                     {service.title}
                   </h4>
-                  <p className="text-secondary-600">{service.description}</p>
+                  <p className="text-secondary-600 dark:text-gray-300">{service.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -112,7 +112,7 @@ const Services = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-3 bg-primary-600 text-white rounded-md font-medium hover:bg-primary-700 transition-colors"
+            className="px-8 py-3 bg-primary-600 dark:bg-primary-500 text-white rounded-md font-medium hover:bg-primary-700 dark:hover:bg-primary-600 transition-colors"
           >
             Get a Free Consultation
           </motion.button>

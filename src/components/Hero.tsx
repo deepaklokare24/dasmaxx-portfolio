@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 const Hero = () => {
   return (
-    <div className="relative min-h-screen bg-gradient-to-b from-white to-primary-50 pt-20">
+    <div className="relative min-h-screen bg-gradient-to-b from-white dark:from-dark-bg to-primary-50 dark:to-dark-card pt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="py-20 md:py-28">
           <motion.div
@@ -11,11 +11,11 @@ const Hero = () => {
             transition={{ duration: 0.5 }}
             className="text-center"
           >
-            <h1 className="text-4xl md:text-6xl font-display font-bold text-secondary-900 mb-6">
+            <h1 className="text-4xl md:text-6xl font-display font-bold text-secondary-900 dark:text-gray-100 mb-6">
               Transforming Ideas into{' '}
-              <span className="text-primary-600">Digital Reality</span>
+              <span className="text-primary-600 dark:text-primary-400">Digital Reality</span>
             </h1>
-            <p className="text-lg md:text-xl text-secondary-600 max-w-3xl mx-auto mb-8">
+            <p className="text-lg md:text-xl text-secondary-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
               We fuse creativity with artificial intelligence to deliver cutting-edge digital solutions
               for individuals, influencers, and small-to-medium-sized businesses.
             </p>
@@ -23,14 +23,14 @@ const Hero = () => {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-3 bg-primary-600 text-white rounded-md font-medium hover:bg-primary-700 transition-colors"
+                className="px-8 py-3 bg-primary-600 dark:bg-primary-500 text-white rounded-md font-medium hover:bg-primary-700 dark:hover:bg-primary-600 transition-colors"
               >
                 Get Started
               </motion.button>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-3 bg-white text-primary-600 rounded-md font-medium border border-primary-600 hover:bg-primary-50 transition-colors"
+                className="px-8 py-3 bg-white dark:bg-dark-card text-primary-600 dark:text-primary-400 rounded-md font-medium border border-primary-600 dark:border-primary-400 hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-colors"
               >
                 View Our Work
               </motion.button>
@@ -51,10 +51,10 @@ const Hero = () => {
               { number: '5+', label: 'Years Experience' },
             ].map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-primary-600 mb-2">
+                <div className="text-3xl md:text-4xl font-bold text-primary-600 dark:text-primary-400 mb-2">
                   {stat.number}
                 </div>
-                <div className="text-sm text-secondary-600">{stat.label}</div>
+                <div className="text-sm text-secondary-600 dark:text-gray-300">{stat.label}</div>
               </div>
             ))}
           </motion.div>
@@ -62,7 +62,7 @@ const Hero = () => {
       </div>
 
       {/* Decorative elements */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white dark:from-dark-bg to-transparent" />
     </div>
   );
 };

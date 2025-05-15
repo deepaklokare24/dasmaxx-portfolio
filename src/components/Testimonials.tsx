@@ -34,7 +34,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section id="testimonials" className="py-20 bg-gradient-to-b from-primary-50 to-white">
+    <section id="testimonials" className="py-20 bg-gradient-to-b from-primary-50 dark:from-dark-card to-white dark:to-dark-bg">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -43,10 +43,10 @@ const Testimonials = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-secondary-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-secondary-900 dark:text-gray-100 mb-4">
             Client Testimonials
           </h2>
-          <p className="text-lg text-secondary-600 max-w-3xl mx-auto">
+          <p className="text-lg text-secondary-600 dark:text-gray-300 max-w-3xl mx-auto">
             Hear what our clients have to say about their experience with DasMaxx AI Studio
           </p>
         </motion.div>
@@ -59,7 +59,7 @@ const Testimonials = () => {
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -100 }}
               transition={{ duration: 0.5 }}
-              className="bg-white p-8 md:p-12 rounded-2xl shadow-xl"
+              className="bg-white dark:bg-dark-card p-8 md:p-12 rounded-2xl shadow-xl"
             >
               <div className="flex flex-col md:flex-row items-center gap-8">
                 <div className="w-24 h-24 md:w-32 md:h-32 rounded-full overflow-hidden flex-shrink-0">
@@ -71,20 +71,20 @@ const Testimonials = () => {
                 </div>
                 <div className="flex-1 text-center md:text-left">
                   <svg
-                    className="w-12 h-12 text-primary-200 mb-4 mx-auto md:mx-0"
+                    className="w-12 h-12 text-primary-200 dark:text-primary-900/20 mb-4 mx-auto md:mx-0"
                     fill="currentColor"
                     viewBox="0 0 32 32"
                   >
                     <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
                   </svg>
-                  <p className="text-xl text-secondary-600 mb-6">
+                  <p className="text-xl text-secondary-600 dark:text-gray-300 mb-6">
                     {testimonials[activeIndex].quote}
                   </p>
                   <div>
-                    <div className="font-bold text-secondary-900">
+                    <div className="font-bold text-secondary-900 dark:text-gray-100">
                       {testimonials[activeIndex].author}
                     </div>
-                    <div className="text-primary-600">{testimonials[activeIndex].role}</div>
+                    <div className="text-primary-600 dark:text-primary-400">{testimonials[activeIndex].role}</div>
                   </div>
                 </div>
               </div>
@@ -96,10 +96,10 @@ const Testimonials = () => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               onClick={prevTestimonial}
-              className="p-2 rounded-full bg-white shadow-md hover:shadow-lg transition-shadow"
+              className="p-2 rounded-full bg-white dark:bg-dark-card shadow-md hover:shadow-lg transition-shadow"
             >
               <svg
-                className="w-6 h-6 text-primary-600"
+                className="w-6 h-6 text-primary-600 dark:text-primary-400"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -116,10 +116,10 @@ const Testimonials = () => {
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               onClick={nextTestimonial}
-              className="p-2 rounded-full bg-white shadow-md hover:shadow-lg transition-shadow"
+              className="p-2 rounded-full bg-white dark:bg-dark-card shadow-md hover:shadow-lg transition-shadow"
             >
               <svg
-                className="w-6 h-6 text-primary-600"
+                className="w-6 h-6 text-primary-600 dark:text-primary-400"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -140,7 +140,9 @@ const Testimonials = () => {
                 key={index}
                 onClick={() => setActiveIndex(index)}
                 className={`w-2 h-2 rounded-full transition-colors ${
-                  index === activeIndex ? 'bg-primary-600' : 'bg-primary-200'
+                  index === activeIndex 
+                    ? 'bg-primary-600 dark:bg-primary-400' 
+                    : 'bg-primary-200 dark:bg-primary-900/20'
                 }`}
               />
             ))}

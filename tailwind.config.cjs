@@ -4,6 +4,7 @@ module.exports = {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
@@ -31,10 +32,16 @@ module.exports = {
           800: '#1e293b',
           900: '#0f172a',
         },
+        dark: {
+          bg: '#0f172a',
+          card: '#1e293b',
+          text: '#f8fafc',
+          muted: '#94a3b8',
+        }
       },
       fontFamily: {
-        sans: ['Inter', 'sans-serif'],
-        display: ['Poppins', 'sans-serif'],
+        sans: ['Inter', 'IBM Plex Sans', 'sans-serif'],
+        display: ['IBM Plex Sans', 'Inter', 'sans-serif'],
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',

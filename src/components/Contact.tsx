@@ -21,7 +21,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-b from-white to-primary-50">
+    <section id="contact" className="py-20 bg-gradient-to-b from-white dark:from-dark-bg to-primary-50 dark:to-dark-card">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -30,10 +30,10 @@ const Contact = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-secondary-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-secondary-900 dark:text-gray-100 mb-4">
             Get in Touch
           </h2>
-          <p className="text-lg text-secondary-600 max-w-3xl mx-auto">
+          <p className="text-lg text-secondary-600 dark:text-gray-300 max-w-3xl mx-auto">
             Ready to transform your business? Let's discuss how we can help you achieve your goals.
           </p>
         </motion.div>
@@ -47,14 +47,14 @@ const Contact = () => {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-2xl font-display font-bold text-secondary-900 mb-6">
+              <h3 className="text-2xl font-display font-bold text-secondary-900 dark:text-gray-100 mb-6">
                 Contact Information
               </h3>
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
+                  <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900/20 rounded-full flex items-center justify-center">
                     <svg
-                      className="w-6 h-6 text-primary-600"
+                      className="w-6 h-6 text-primary-600 dark:text-primary-400"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -68,16 +68,16 @@ const Contact = () => {
                     </svg>
                   </div>
                   <div>
-                    <div className="font-medium text-secondary-900">Email</div>
-                    <a href="mailto:contact@dasmaxx.com" className="text-primary-600 hover:text-primary-700">
+                    <div className="font-medium text-secondary-900 dark:text-gray-100">Email</div>
+                    <a href="mailto:contact@dasmaxx.com" className="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300">
                       contact@dasmaxx.com
                     </a>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
+                  <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900/20 rounded-full flex items-center justify-center">
                     <svg
-                      className="w-6 h-6 text-primary-600"
+                      className="w-6 h-6 text-primary-600 dark:text-primary-400"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -91,16 +91,16 @@ const Contact = () => {
                     </svg>
                   </div>
                   <div>
-                    <div className="font-medium text-secondary-900">Phone</div>
-                    <a href="tel:+1234567890" className="text-primary-600 hover:text-primary-700">
+                    <div className="font-medium text-secondary-900 dark:text-gray-100">Phone</div>
+                    <a href="tel:+1234567890" className="text-primary-600 dark:text-primary-400 hover:text-primary-700 dark:hover:text-primary-300">
                       +1 (234) 567-890
                     </a>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center">
+                  <div className="w-12 h-12 bg-primary-100 dark:bg-primary-900/20 rounded-full flex items-center justify-center">
                     <svg
-                      className="w-6 h-6 text-primary-600"
+                      className="w-6 h-6 text-primary-600 dark:text-primary-400"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -120,29 +120,29 @@ const Contact = () => {
                     </svg>
                   </div>
                   <div>
-                    <div className="font-medium text-secondary-900">Location</div>
-                    <div className="text-secondary-600">San Francisco, CA</div>
+                    <div className="font-medium text-secondary-900 dark:text-gray-100">Location</div>
+                    <div className="text-secondary-600 dark:text-gray-300">San Francisco, CA</div>
                   </div>
                 </div>
               </div>
             </div>
 
             <div>
-              <h3 className="text-2xl font-display font-bold text-secondary-900 mb-6">
+              <h3 className="text-2xl font-display font-bold text-secondary-900 dark:text-gray-100 mb-6">
                 Business Hours
               </h3>
               <div className="space-y-2">
                 <div className="flex justify-between">
-                  <span className="text-secondary-600">Monday - Friday</span>
-                  <span className="font-medium text-secondary-900">9:00 AM - 6:00 PM</span>
+                  <span className="text-secondary-600 dark:text-gray-300">Monday - Friday</span>
+                  <span className="font-medium text-secondary-900 dark:text-gray-100">9:00 AM - 6:00 PM</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-secondary-600">Saturday</span>
-                  <span className="font-medium text-secondary-900">10:00 AM - 4:00 PM</span>
+                  <span className="text-secondary-600 dark:text-gray-300">Saturday</span>
+                  <span className="font-medium text-secondary-900 dark:text-gray-100">10:00 AM - 4:00 PM</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-secondary-600">Sunday</span>
-                  <span className="font-medium text-secondary-900">Closed</span>
+                  <span className="text-secondary-600 dark:text-gray-300">Sunday</span>
+                  <span className="font-medium text-secondary-900 dark:text-gray-100">Closed</span>
                 </div>
               </div>
             </div>
@@ -156,7 +156,7 @@ const Contact = () => {
           >
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium text-secondary-700 mb-1">
+                <label htmlFor="name" className="block text-sm font-medium text-secondary-700 dark:text-gray-300 mb-1">
                   Name
                 </label>
                 <input
@@ -165,12 +165,12 @@ const Contact = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border border-secondary-300 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                  className="w-full px-4 py-2 border border-secondary-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-dark-card dark:text-gray-100"
                   required
                 />
               </div>
               <div>
-                <label htmlFor="email" className="block text-sm font-medium text-secondary-700 mb-1">
+                <label htmlFor="email" className="block text-sm font-medium text-secondary-700 dark:text-gray-300 mb-1">
                   Email
                 </label>
                 <input
@@ -179,12 +179,12 @@ const Contact = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border border-secondary-300 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                  className="w-full px-4 py-2 border border-secondary-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-dark-card dark:text-gray-100"
                   required
                 />
               </div>
               <div>
-                <label htmlFor="subject" className="block text-sm font-medium text-secondary-700 mb-1">
+                <label htmlFor="subject" className="block text-sm font-medium text-secondary-700 dark:text-gray-300 mb-1">
                   Subject
                 </label>
                 <input
@@ -193,12 +193,12 @@ const Contact = () => {
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border border-secondary-300 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                  className="w-full px-4 py-2 border border-secondary-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-dark-card dark:text-gray-100"
                   required
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-secondary-700 mb-1">
+                <label htmlFor="message" className="block text-sm font-medium text-secondary-700 dark:text-gray-300 mb-1">
                   Message
                 </label>
                 <textarea
@@ -207,7 +207,7 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   rows={4}
-                  className="w-full px-4 py-2 border border-secondary-300 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500"
+                  className="w-full px-4 py-2 border border-secondary-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-primary-500 focus:border-primary-500 dark:bg-dark-card dark:text-gray-100"
                   required
                 />
               </div>
@@ -215,7 +215,7 @@ const Contact = () => {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 type="submit"
-                className="w-full px-6 py-3 bg-primary-600 text-white rounded-md font-medium hover:bg-primary-700 transition-colors"
+                className="w-full px-6 py-3 bg-primary-600 text-white rounded-md font-medium hover:bg-primary-700 dark:hover:bg-primary-500 transition-colors"
               >
                 Send Message
               </motion.button>

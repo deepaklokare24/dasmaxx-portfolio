@@ -8,19 +8,23 @@ import Blog from './components/Blog'
 import FAQ from './components/FAQ'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import ThemeToggle from './components/ThemeToggle'
 
 function App() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white dark:bg-dark-bg text-gray-900 dark:text-gray-100 transition-colors duration-200">
+      <ThemeToggle />
       <Navbar />
-      <Hero />
-      <About />
-      <Services />
-      <Projects />
-      <Testimonials />
-      <Blog />
-      <FAQ />
-      <Contact />
+      <main className="pt-16">
+        <Hero />
+        <About />
+        <Services />
+        <Projects />
+        <Testimonials />
+        <Blog />
+        <FAQ />
+        <Contact />
+      </main>
       <Footer />
     </div>
   )

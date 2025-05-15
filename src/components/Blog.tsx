@@ -55,7 +55,7 @@ const Blog = () => {
     : posts.filter(post => post.category === activeCategory);
 
   return (
-    <section id="blog" className="py-20 bg-white">
+    <section id="blog" className="py-20 bg-white dark:bg-dark-bg">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -64,10 +64,10 @@ const Blog = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-secondary-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-secondary-900 dark:text-gray-100 mb-4">
             Latest Insights
           </h2>
-          <p className="text-lg text-secondary-600 max-w-3xl mx-auto">
+          <p className="text-lg text-secondary-600 dark:text-gray-300 max-w-3xl mx-auto">
             Explore our thoughts on AI, design, and business strategy
           </p>
         </motion.div>
@@ -88,7 +88,7 @@ const Blog = () => {
               className={`px-6 py-2 rounded-full text-sm font-medium transition-colors ${
                 activeCategory === category.id
                   ? 'bg-primary-600 text-white'
-                  : 'bg-primary-50 text-primary-600 hover:bg-primary-100'
+                  : 'bg-primary-50 dark:bg-dark-card text-primary-600 dark:text-primary-400 hover:bg-primary-100 dark:hover:bg-dark-card/80'
               }`}
             >
               {category.name}
@@ -105,7 +105,7 @@ const Blog = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -5 }}
-              className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all"
+              className="bg-white dark:bg-dark-card rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all"
             >
               <div className="aspect-w-16 aspect-h-9">
                 <img
@@ -122,20 +122,20 @@ const Blog = () => {
                     className="w-10 h-10 rounded-full"
                   />
                   <div>
-                    <div className="font-medium text-secondary-900">{post.author.name}</div>
-                    <div className="text-sm text-secondary-500">{post.date}</div>
+                    <div className="font-medium text-secondary-900 dark:text-gray-100">{post.author.name}</div>
+                    <div className="text-sm text-secondary-500 dark:text-gray-400">{post.date}</div>
                   </div>
                 </div>
-                <h3 className="text-xl font-bold text-secondary-900 mb-2">
+                <h3 className="text-xl font-bold text-secondary-900 dark:text-gray-100 mb-2">
                   {post.title}
                 </h3>
-                <p className="text-secondary-600 mb-4">{post.excerpt}</p>
+                <p className="text-secondary-600 dark:text-gray-300 mb-4">{post.excerpt}</p>
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-primary-600">{post.readTime}</span>
+                  <span className="text-sm text-primary-600 dark:text-primary-400">{post.readTime}</span>
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="text-primary-600 font-medium hover:text-primary-700"
+                    className="text-primary-600 dark:text-primary-400 font-medium hover:text-primary-700 dark:hover:text-primary-300"
                   >
                     Read More →
                   </motion.button>
@@ -155,7 +155,7 @@ const Blog = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-3 bg-primary-600 text-white rounded-md font-medium hover:bg-primary-700 transition-colors"
+            className="px-8 py-3 bg-primary-600 text-white rounded-md font-medium hover:bg-primary-700 dark:hover:bg-primary-500 transition-colors"
           >
             View All Posts
           </motion.button>

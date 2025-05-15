@@ -61,7 +61,7 @@ const Projects = () => {
     : projects.filter(project => project.category === activeCategory);
 
   return (
-    <section id="projects" className="py-20 bg-white">
+    <section id="projects" className="py-20 bg-white dark:bg-dark-bg">
       <div className="container">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -70,10 +70,10 @@ const Projects = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-secondary-900 mb-4">
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-secondary-900 dark:text-gray-100 mb-4">
             Our Projects
           </h2>
-          <p className="text-lg text-secondary-600 max-w-3xl mx-auto">
+          <p className="text-lg text-secondary-600 dark:text-gray-300 max-w-3xl mx-auto">
             Explore our portfolio of successful projects and creative solutions
           </p>
         </motion.div>
@@ -93,8 +93,8 @@ const Projects = () => {
               onClick={() => setActiveCategory(category.id)}
               className={`px-6 py-2 rounded-full text-sm font-medium transition-colors ${
                 activeCategory === category.id
-                  ? 'bg-primary-600 text-white'
-                  : 'bg-primary-50 text-primary-600 hover:bg-primary-100'
+                  ? 'bg-primary-600 dark:bg-primary-500 text-white'
+                  : 'bg-primary-50 dark:bg-dark-card text-primary-600 dark:text-primary-400 hover:bg-primary-100 dark:hover:bg-primary-900/20'
               }`}
             >
               {category.name}
@@ -111,7 +111,7 @@ const Projects = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -5 }}
-              className="group relative bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all"
+              className="group relative bg-white dark:bg-dark-card rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all"
             >
               <div className="aspect-w-16 aspect-h-9">
                 <img
@@ -121,15 +121,15 @@ const Projects = () => {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold text-secondary-900 mb-2">
+                <h3 className="text-xl font-bold text-secondary-900 dark:text-gray-100 mb-2">
                   {project.title}
                 </h3>
-                <p className="text-secondary-600 mb-4">{project.description}</p>
+                <p className="text-secondary-600 dark:text-gray-300 mb-4">{project.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag, tagIndex) => (
                     <span
                       key={tagIndex}
-                      className="px-3 py-1 bg-primary-50 text-primary-600 rounded-full text-sm"
+                      className="px-3 py-1 bg-primary-50 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400 rounded-full text-sm"
                     >
                       {tag}
                     </span>
@@ -150,7 +150,7 @@ const Projects = () => {
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-3 bg-primary-600 text-white rounded-md font-medium hover:bg-primary-700 transition-colors"
+            className="px-8 py-3 bg-primary-600 dark:bg-primary-500 text-white rounded-md font-medium hover:bg-primary-700 dark:hover:bg-primary-600 transition-colors"
           >
             View All Projects
           </motion.button>
